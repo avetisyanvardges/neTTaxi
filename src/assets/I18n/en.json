@@ -1,0 +1,114 @@
+{
+  "pages": {
+    "activations": {
+      "title": "Magnets",
+      "carMagnet": "Car Magnet",
+      "areaMagnet": "Area magnet",
+      "econom": "Econom",
+      "comfort": "Comfort",
+      "comfortPlus": "Comfort+",
+      "buissnes": "Buissnes",
+      "miniven": "Miniven",
+      "shipment": "Shipment",
+      "number_of_cars": "Number of cars",
+      "vacantCars": "Free cars",
+      "time": "Time",
+      "magnet": "Magnet",
+      "diameter": "Diameter"
+
+    },
+    "selectTheme":{
+      "title": "ThemeSelector",
+      "select": "Select",
+      "theme": "Theme"
+    },
+    "wallet": {
+      "title": "Wallet"
+    },
+    "orders": {
+      "title": "Orders page"
+    },
+    "settings": {
+      "title": "Settings",
+      "language": "Language",
+      "usedAddresses": "Frequently used addresses",
+      "payment": "Payment option",
+      "detail": "SettingDetail"
+    },
+    "help": {
+      "title": "Help",
+      "message": "Message",
+      "contact_us": "Contact us"
+    },
+    "info": {
+      "title": "Info",
+      "tariffs": "Tariffs",
+      "about_us": "About us",
+      "use_site": "How to use the site"
+    },
+    "security": {
+      "title": "Security",
+      "based_safety": " Based on the safety rules, using your health, we urge registered users to follow the COVID-19 VIRUS PROTECTION rules when providing or using the service.",
+      "mask": "Wear a mask and  glove.",
+      "online_payments": "Make payments online",
+      "disinfect": "Regularly   disinfect  the car",
+      "wash_hands": "Wash your hands with detergent regularly"
+    },
+    "registration": {
+      "title": "Registration procedure",
+      "name": "Name",
+      "last_name": "Last Name",
+      "phone_number": "Phone number",
+      "email": "E-mail Address",
+      "birth": "Year of birth, month, day "
+    },
+    "driver": {
+      "title": "Driver"
+    }
+  },
+  "classes": {
+    "econom": {
+      "title": "Էկոնոմ",
+      "description": "մինիմալ/300դր,ներառյալ 3կմ",
+      "subDescription": " այնուհետ կմ/100դր,քաղաքից դուրս կմ/100դր"
+    },
+    "comfort": {
+      "title": "Կոմֆորտ",
+      "description": "մինիմալ/400դր,ներառյալ 3կմ",
+      "subDescription": "այնուհետ կմ/100դր,քաղաքից դուրս կմ/120դր"
+    },
+    "comfortPlus": {
+      "title": "Կոմֆորտ+",
+      "description": " մինիմալ/500դր,ներառյալ 3կմ",
+      "subDescription": "կմ/100դր,քաղաքից դուրս կմ/150դր"
+    },
+    "buissnes": {
+      "title": "Բիզնես",
+      "description": "մինիմալ/800դր,ներառյալ 3կմ",
+      "subDescription": "այնուհետ կմ/80դր,քաղաքից դուրս կմ/150դր"
+    },
+    "miniven": {
+      "title": "Մինիվեն",
+      "description": "մինիմալ/600դր,ներառյալ 3կմ",
+      "subDescription": "այնուհետ կմ/100դր,միայն քաղաքի ներսում"
+    },
+    "shipment": {
+      "title": "Առաքում",
+      "description": "300դր",
+      "subDescription": ""
+    }
+  },
+  "texts": {
+    "save": "Save",
+    "order": "Order",
+    "next": "Next",
+    "login": "Login",
+    "enter_code": "Enter the code sent to your phone",
+    "activate": "Activate"
+  },
+  "languages": {
+    "arm": "Armenian",
+    "en": "English",
+    "ru": "Russian"
+  }
+}
