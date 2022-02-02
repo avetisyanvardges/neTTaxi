@@ -29,7 +29,7 @@ const Screens = ({navigation, style}) => {
     <Animated.View style={StyleSheet.flatten([styles.stack, style])}>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName={'SelectTheme'}>
+        initialRouteName={'Verification'}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="SettingDetail" component={SettingDetail} />

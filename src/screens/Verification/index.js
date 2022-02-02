@@ -60,8 +60,7 @@ const Verification = ({navigation}) => {
           end={{x: 1.3, y: 0.5}}
           colors={['#F4F0FA', '#D3C7E9']}
           style={{
-            height: '107%',
-            borderRadius: Sizes.size50,
+            height: '100%',
           }}>
           {next ? (
             <View
@@ -150,8 +149,8 @@ const Verification = ({navigation}) => {
                     fontSize: Sizes.size30,
                     alignItems: 'center',
                     justifyContent: 'center',
-                    borderBottomWidth: 1,
-                    borderBottomColor: Colors.borderDefColor,
+                    borderBottomWidth: 2,
+                    borderBottomColor: Colors.gray,
                     marginRight: Sizes.size25,
                   }}
                 />
@@ -168,8 +167,8 @@ const Verification = ({navigation}) => {
                     fontSize: Sizes.size30,
                     alignItems: 'center',
                     justifyContent: 'center',
-                    borderBottomWidth: 1,
-                    borderBottomColor: Colors.borderDefColor,
+                    borderBottomWidth: 2,
+                    borderBottomColor: Colors.gray,
                     marginRight: Sizes.size25,
                   }}
                 />
@@ -186,8 +185,8 @@ const Verification = ({navigation}) => {
                     fontSize: Sizes.size30,
                     alignItems: 'center',
                     justifyContent: 'center',
-                    borderBottomWidth: 1,
-                    borderBottomColor: Colors.borderDefColor,
+                    borderBottomWidth: 2,
+                    borderBottomColor: Colors.gray,
                     marginRight: Sizes.size25,
                   }}
                 />
@@ -203,8 +202,8 @@ const Verification = ({navigation}) => {
                     fontSize: Sizes.size30,
                     alignItems: 'center',
                     justifyContent: 'center',
-                    borderBottomWidth: 1,
-                    borderBottomColor: Colors.borderDefColor,
+                    borderBottomWidth: 2,
+                    borderBottomColor: Colors.gray,
                     marginRight: Sizes.size25,
                   }}
                 />
