@@ -24,6 +24,7 @@ const App = () => {
   const getLanguage = async () => {
     const data = await AsyncStorage.getItem('@lang');
     const parse = JSON.parse(data);
+    console.log(parse,"parse")
     i18n.changeLanguage(parse);
     if (parse === 'ru') {
       const customTextInputProps = {

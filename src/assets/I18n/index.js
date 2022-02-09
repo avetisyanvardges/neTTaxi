@@ -6,6 +6,7 @@ import ru from './ru';
 import am from './am.json';
 
 i18n.use(initReactI18next).init({
+  compatibilityJSON: 'v3',
   resources: {
     en: {
       translation: en,
