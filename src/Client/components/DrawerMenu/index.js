@@ -65,7 +65,7 @@ const DrawerMenu = props => {
                 deviceInfo.deviceHeight < 822 ? Sizes.size5 : Sizes.size35,
             }}>
             <DrawerItem
-              label={i18n.t('pages.activations.title')}
+              label={i18n.t('client.pages.activations.title')}
               onPress={() => props.navigation.navigate('Activations')}
               labelStyle={{
                 fontSize:
@@ -81,7 +81,7 @@ const DrawerMenu = props => {
               )}
             />
             <DrawerItem
-              label={i18n.t('pages.orders.title')}
+              label={i18n.t('client.pages.orders.title')}
               onPress={() => props.navigation.navigate('Orders')}
               labelStyle={{
                 fontSize:
@@ -98,7 +98,7 @@ const DrawerMenu = props => {
             />
 
             <DrawerItem
-              label={i18n.t('pages.settings.title')}
+              label={i18n.t('client.pages.settings.title')}
               onPress={() => props.navigation.navigate('Settings')}
               labelStyle={{
                 fontSize:
@@ -114,7 +114,7 @@ const DrawerMenu = props => {
               )}
             />
             <DrawerItem
-              label={i18n.t('pages.help.title')}
+              label={i18n.t('client.pages.help.title')}
               onPress={() => props.navigation.navigate('Help')}
               labelStyle={{
                 fontSize:
@@ -130,7 +130,7 @@ const DrawerMenu = props => {
               )}
             />
             <DrawerItem
-              label={i18n.t('pages.info.title')}
+              label={i18n.t('client.pages.info.title')}
               onPress={() => props.navigation.navigate('Info')}
               labelStyle={{
                 fontSize:
@@ -146,7 +146,7 @@ const DrawerMenu = props => {
               )}
             />
             <DrawerItem
-              label={i18n.t('pages.security.title')}
+              label={i18n.t('client.pages.security.title')}
               onPress={() => props.navigation.navigate('Security')}
               labelStyle={{
                 fontSize:
@@ -162,7 +162,7 @@ const DrawerMenu = props => {
               )}
             />
             <DrawerItem
-              label={i18n.t('pages.driver.title')}
+              label={i18n.t('client.pages.driver.title')}
               onPress={() => {}}
               labelStyle={{
                 fontSize:

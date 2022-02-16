@@ -18,18 +18,7 @@ class ReinforcementsScreen extends Component {
           leftIcon="back"
           leftIconPress={() => navigation.goBack()}
         />
-        <DrawerItem
-          label={i18n.t('pages.tariff.title')}
-          onPress={() => console.log('Tariff')}
-          icon={() => (
-            <TariffIcon
-              IconWidth={Sizes.size26}
-              IconHeight={Sizes.size26}
-              IconColorStart={BackgroundColors.gradientColorStart}
-              IconColorEnd={BackgroundColors.gradientColorEnd}
-            />
-          )}
-        />
+
         <View
           style={{
             width: '95%',
@@ -40,18 +29,7 @@ class ReinforcementsScreen extends Component {
             marginBottom: Sizes.size10,
           }}
         />
-        <DrawerItem
-          label={i18n.t('pages.points.title')}
-          onPress={() => console.log('Point')}
-          icon={() => (
-            <PointsIcon
-              IconWidth={Sizes.size26}
-              IconHeight={Sizes.size26}
-              IconColorStart={BackgroundColors.gradientColorStart}
-              IconColorEnd={BackgroundColors.gradientColorEnd}
-            />
-          )}
-        />
+
         <View
           style={{
             width: '95%',
@@ -62,18 +40,7 @@ class ReinforcementsScreen extends Component {
             marginBottom: Sizes.size10,
           }}
         />
-        <DrawerItem
-          label={i18n.t('pages.radius.title')}
-          onPress={() => console.log('Radius')}
-          icon={() => (
-            <RadiusIcon
-              IconWidth={Sizes.size26}
-              IconHeight={Sizes.size26}
-              IconColorStart={BackgroundColors.gradientColorStart}
-              IconColorEnd={BackgroundColors.gradientColorEnd}
-            />
-          )}
-        />
+
         <View
           style={{
             width: '95%',

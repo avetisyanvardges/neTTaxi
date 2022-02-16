@@ -1,69 +1,96 @@
 {
-  "pages": {
-    "activations": {
-      "title": "Magnets",
-      "carMagnet": "Car Magnet",
-      "areaMagnet": "Area magnet",
-      "econom": "Econom",
-      "comfort": "Comfort",
-      "comfortPlus": "Comfort+",
-      "buissnes": "Buissnes",
-      "miniven": "Miniven",
-      "shipment": "Shipment",
-      "number_of_cars": "Number of cars",
-      "vacantCars": "Free cars",
-      "time": "Time",
-      "magnet": "Magnet",
-      "diameter": "Diameter"
+  "client": {
+    "pages": {
+      "activations": {
+        "title": "Magnets",
+        "carMagnet": "Car Magnet",
+        "areaMagnet": "Area magnet",
+        "econom": "Econom",
+        "comfort": "Comfort",
+        "comfortPlus": "Comfort+",
+        "buissnes": "Buissnes",
+        "miniven": "Miniven",
+        "shipment": "Shipment",
+        "number_of_cars": "Number of cars",
+        "vacantCars": "Free cars",
+        "time": "Time",
+        "magnet": "Magnet",
+        "diameter": "Diameter"
 
-    },
-    "selectTheme":{
-      "title": "ThemeSelector",
-      "select": "Select",
-      "theme": "Theme"
-    },
-    "wallet": {
-      "title": "Wallet"
-    },
-    "orders": {
-      "title": "Orders page"
-    },
-    "settings": {
-      "title": "Settings",
-      "language": "Language",
-      "usedAddresses": "Frequently used addresses",
-      "payment": "Payment option",
-      "detail": "SettingDetail"
-    },
-    "help": {
-      "title": "Help",
-      "message": "Message",
-      "contact_us": "Contact us"
-    },
-    "info": {
-      "title": "Info",
-      "tariffs": "Tariffs",
-      "about_us": "About us",
-      "use_site": "How to use the site"
-    },
-    "security": {
-      "title": "Security",
-      "based_safety": " Based on the safety rules, using your health, we urge registered users to follow the COVID-19 VIRUS PROTECTION rules when providing or using the service.",
-      "mask": "Wear a mask and  glove.",
-      "online_payments": "Make payments online",
-      "disinfect": "Regularly   disinfect  the car",
-      "wash_hands": "Wash your hands with detergent regularly"
-    },
-    "registration": {
-      "title": "Registration procedure",
-      "name": "Name",
-      "last_name": "Last Name",
-      "phone_number": "Phone number",
-      "email": "E-mail Address",
-      "birth": "Year of birth, month, day "
-    },
-    "driver": {
-      "title": "Driver"
+      },
+      "selectTheme":{
+        "title": "ThemeSelector",
+        "select": "Select",
+        "theme": "Theme"
+      },
+      "wallet": {
+        "title": "Wallet"
+      },
+      "orders": {
+        "title": "Orders page"
+      },
+      "settings": {
+        "title": "Settings",
+        "language": "Language",
+        "usedAddresses": "Frequently used addresses",
+        "payment": "Payment option",
+        "detail": "SettingDetail"
+      },
+      "help": {
+        "title": "Help",
+        "message": "Message",
+        "contact_us": "Contact us"
+      },
+      "info": {
+        "title": "Info",
+        "tariffs": "Tariffs",
+        "about_us": "About us",
+        "use_site": "How to use the site"
+      },
+      "security": {
+        "title": "Security",
+        "based_safety": " Based on the safety rules, using your health, we urge registered users to follow the COVID-19 VIRUS PROTECTION rules when providing or using the service.",
+        "mask": "Wear a mask and  glove.",
+        "online_payments": "Make payments online",
+        "disinfect": "Regularly   disinfect  the car",
+        "wash_hands": "Wash your hands with detergent regularly"
+      },
+      "registration": {
+        "title": "Registration procedure",
+        "name": "Name",
+        "last_name": "Last Name",
+        "phone_number": "Phone number",
+        "email": "E-mail Address",
+        "birth": "Year of birth, month, day "
+      },
+      "driver": {
+        "title": "Driver"
+      }
+    }
+  },
+  "driver": {
+    "pages": {
+      "reinforcements": {
+        "title": "Reinforcements"
+      },
+      "wallet": {
+        "title": "Wallet"
+      },
+      "data": {
+        "title": "Data"
+      },
+      "settings": {
+        "title": "Settings"
+      },
+      "suggestions": {
+        "title": "Suggestions"
+      },
+      "security": {
+        "title": "Security"
+      },
+      "rating": {
+        "title": "Rating"
+      }
     }
   },
   "classes": {

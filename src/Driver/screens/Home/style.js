@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Sizes} from '../../../assets/RootStyle';
+import {Sizes, Colors} from '../../../assets/RootStyle';
 
 const styles = theme => {
   return StyleSheet.create({
@@ -20,6 +20,15 @@ const styles = theme => {
       top: Sizes.size20,
       left: Sizes.size20,
       borderRadius: Sizes.size10,
+    },
+    money: {
+      width: Sizes.size10,
+      height: Sizes.size20,
+      color: Colors.black,
+      justifyContent: 'center',
+      alignItems: 'center',
+      top: Sizes.size20,
+      right: Sizes.size20,
     },
   });
 };

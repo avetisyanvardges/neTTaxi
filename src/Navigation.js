@@ -84,9 +84,7 @@ const ClientMenu = () => {
 
 const DriverScreens = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{headerShown: false}}
-      initialRouteName={'Reinforcements'}>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={DriverHomeScreen} />
       <Stack.Screen name="Reinforcements" component={ReinforcementsScreen} />
       <Stack.Screen name="Wallet" component={DriverWalletScreen} />
@@ -125,7 +123,7 @@ const MainNavigation = () => {
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false}}
-      initialRouteName={'Verification'}>
+      initialRouteName={'Driver'}>
       <Stack.Screen name="Verification" component={Verification} />
       <Stack.Screen name="Client" component={ClientMenu} />
       <Stack.Screen name="Driver" component={DriverMenu} />

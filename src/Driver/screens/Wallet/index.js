@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View} from 'react-native';
-import {ScreenHeader} from '../../../Client/components/ScreenHeader';
+import {ScreenHeader} from '../../../Driver/components/ScreenHeader';
 class WalletScreen extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +10,7 @@ class WalletScreen extends Component {
     return (
       <View style={{flex: 1}}>
         <ScreenHeader
-          title="pages.wallet.title"
+          title="driver.pages.wallet.title"
           leftIcon="back"
           leftIconPress={() => navigation.goBack()}
         />
