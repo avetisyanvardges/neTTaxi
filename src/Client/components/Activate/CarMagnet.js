@@ -1,13 +1,13 @@
 import React from 'react';
 import {View, Text, FlatList, TouchableOpacity} from 'react-native';
-import {Econom, Language} from '../../assets/Icons';
+import {Economy, Language} from '../../assets/Icons';
 import {BackgroundColors, Colors, Sizes} from '../../../assets/RootStyle';
 import i18n from '../../../assets/I18n';
 import {LinkItem} from '../LinkItem';
 const CarMagnet = () => {
   const data = [
     {
-      title: 'econom',
+      title: 'economy',
     },
     {
       title: 'comfort',
@@ -16,10 +16,10 @@ const CarMagnet = () => {
       title: 'comfortPlus',
     },
     {
-      title: 'buissnes',
+      title: 'business',
     },
     {
-      title: 'miniven',
+      title: 'minivan',
     },
     {
       title: 'shipment',

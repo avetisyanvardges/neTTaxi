@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, FlatList} from 'react-native';
 import i18n from '../../../assets/I18n';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Colors} from '../../../assets/RootStyle';
 import {RadioItem} from '../RadioItem';
 const Language = () => {

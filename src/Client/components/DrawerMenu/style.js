@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native';
-import {Colors, Sizes} from '../../../assets/RootStyle';
+import {Colors, fullScreen, Shadow, Sizes} from '../../../assets/RootStyle';
+import {deviceInfo} from '../../../assets/DeviceInfo';
 
 const styles = theme => {
   return StyleSheet.create({
     profilePic: {
       alignItems: 'center',
-      marginTop: Sizes.size27,
-      borderRadius: Sizes.size20,
+      marginTop: fullScreen.height < 800 ? 0 : Sizes.size27,
     },
     profileInfo: {
       alignItems: 'center',
@@ -20,9 +20,9 @@ const styles = theme => {
       width: '100%',
       paddingHorizontal: Sizes.size12,
       borderBottomWidth: Sizes.size1,
-      borderBottomColor: Colors.silver,
+      borderBottomColor: Colors.borderDefColor,
       marginHorizontal: Sizes.size12,
-      marginTop: Sizes.size25,
+      marginTop: deviceInfo.deviceHeight < 822 ? Sizes.size15 : Sizes.size25,
       marginBottom: Sizes.size10,
     },
   });

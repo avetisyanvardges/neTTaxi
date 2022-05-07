@@ -32,21 +32,23 @@ import {LinearButton} from '../../components/LinearButton';
 import LinearGradient from 'react-native-linear-gradient';
 import i18n from 'i18next';
 import {deviceInfo} from '../../../assets/DeviceInfo';
+import {useSelector} from 'react-redux';
 
 const Home = ({navigation}) => {
+  const buttonColor = useSelector(store => store.themes.buttonColor);
   const [buttonSize, setButtonSize] = useState('small');
   const [order, setOrder] = useState(false);
   const [userLocation, setUserLOcation] = useState({
     userLocationStart: 'Սկզբնակետ',
     userLocationEnd: 'Նշեք վերջնակետը',
   });
-  React.useEffect(() => {
-    const unsubscribe = navigation.addListener('drawerClose', e => {
-      console.log(e);
-    });
-
-    return unsubscribe;
-  }, [navigation]);
+  // React.useEffect(() => {
+  //   const unsubscribe = navigation.addListener('drawerClose', e => {
+  //     console.log(e, 7777);
+  //   });
+  //
+  //   return unsubscribe;
+  // }, [navigation]);
 
   const isOpen = useDrawerStatus() === 'open';
   const {
@@ -93,7 +95,7 @@ const Home = ({navigation}) => {
       <LinearGradient
         start={{x: 0, y: 0.5}}
         end={{x: 1.3, y: 0.5}}
-        colors={['#FFFFFF', '#C4B0E4']}
+        colors={['#FFFFFF', buttonColor?.PRIMARY_BUTTON_COLOR[0]]}
         style={{borderRadius: Sizes.size12}}>
         <View style={{marginLeft: Sizes.size20}}>
           <Text style={classItemTitle}>{title}</Text>
@@ -110,75 +112,7 @@ const Home = ({navigation}) => {
   );
   return (
     <>
-      {isOpen ? (
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            backgroundColor: 'transparent',
-          }}>
-          <View
-            style={{
-              width: '90%',
-              height: '60%',
-              backgroundColor: 'rgba(242, 242, 242, 0.5)',
-              borderRadius: Sizes.size20,
-              marginLeft: 5,
-              shadowColor: 'rgba(0, 0, 0, 0.5)',
-              shadowOffset: {
-                width: 0,
-                height: 5,
-              },
-              shadowOpacity: 0.34,
-              shadowRadius: 5,
-              elevation: 10,
-            }}
-          />
-          <View
-            style={{
-              width: '100%',
-              height: '91%',
-              position: 'absolute',
-              left: 23,
-              backgroundColor: 'rgba(242, 242, 242, 0.7)',
-              borderRadius: Sizes.size20,
-              shadowColor: 'rgba(0, 0, 0, 0.7)',
-              shadowOffset: {
-                width: 0,
-                height: 7,
-              },
-              shadowOpacity: 0.43,
-              shadowRadius: 9.51,
-              elevation: 15,
-            }}
-          />
-        </View>
-      ) : null}
-      <View
-        style={[
-          container,
-          isOpen
-            ? {
-                height: '100%',
-                borderRadius: 20,
-                position: 'absolute',
-                overflow: 'hidden',
-                zIndex: 999,
-                left: 40,
-                right: 0,
-                top: 0,
-                bottom: 0,
-                shadowColor: '#000',
-                shadowOffset: {
-                  width: 0,
-                  height: 5,
-                },
-                shadowOpacity: 0.34,
-                shadowRadius: 6.27,
-                elevation: 10,
-              }
-            : null,
-        ]}>
+      <View style={[container]}>
         <View
           style={{
             flex: 1,
@@ -191,8 +125,8 @@ const Home = ({navigation}) => {
               <UserStart
                 IconWidth={Sizes.size18}
                 IconHeight={Sizes.size18}
-                IconColorStart={BackgroundColors.gradientColorStart}
-                IconColorEnd={BackgroundColors.gradientColorEnd}
+                IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
               />
               <TextInput
                 placeholder="12/1"
@@ -214,8 +148,8 @@ const Home = ({navigation}) => {
                 <UserStart
                   IconWidth={Sizes.size18}
                   IconHeight={Sizes.size18}
-                  IconColorStart={BackgroundColors.gradientColorStart}
-                  IconColorEnd={BackgroundColors.gradientColorEnd}
+                  IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                  IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
                 />
                 <TextInput
                   style={startOfTheRouteInput}
@@ -226,8 +160,8 @@ const Home = ({navigation}) => {
                 <UserStart
                   IconWidth={Sizes.size18}
                   IconHeight={Sizes.size18}
-                  IconColorStart={BackgroundColors.gradientColorStart}
-                  IconColorEnd={BackgroundColors.gradientColorEnd}
+                  IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                  IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
                 />
                 <TextInput
                   placeholder={userLocation.userLocationEnd}
@@ -251,8 +185,8 @@ const Home = ({navigation}) => {
             }}>
             <View>
               <LinearButton
-                startColor={BackgroundColors.gradientColorStart}
-                endColor={BackgroundColors.gradientColorEnd}
+                startColor={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                endColor={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
                 title={i18n.t('texts.order')}
                 size={buttonSize}
                 onPress={() => {
@@ -273,8 +207,8 @@ const Home = ({navigation}) => {
                 <MenuIcon
                   IconWidth={Sizes.size35}
                   IconHeight={Sizes.size35}
-                  IconColorStart={BackgroundColors.gradientColorStart}
-                  IconColorEnd={BackgroundColors.gradientColorEnd}
+                  IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                  IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
                 />
               </TouchableOpacity>
               <View style={frequentlyUsedButtons}>
@@ -282,24 +216,24 @@ const Home = ({navigation}) => {
                   <RandomAddress
                     IconWidth={Sizes.size22}
                     IconHeight={Sizes.size22}
-                    IconColorStart={BackgroundColors.gradientColorStart}
-                    IconColorEnd={BackgroundColors.gradientColorEnd}
+                    IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                    IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
                   />
                 </TouchableOpacity>
                 <TouchableOpacity style={home}>
                   <HomeIcon
                     IconWidth={Sizes.size22}
                     IconHeight={Sizes.size22}
-                    IconColorStart={BackgroundColors.gradientColorStart}
-                    IconColorEnd={BackgroundColors.gradientColorEnd}
+                    IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                    IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
                   />
                 </TouchableOpacity>
                 <TouchableOpacity style={work}>
                   <Work
                     IconWidth={Sizes.size22}
                     IconHeight={Sizes.size22}
-                    IconColorStart={BackgroundColors.gradientColorStart}
-                    IconColorEnd={BackgroundColors.gradientColorEnd}
+                    IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                    IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
                   />
                 </TouchableOpacity>
               </View>
@@ -316,8 +250,8 @@ const Home = ({navigation}) => {
                 <ArrowLeft
                   IconWidth={IconsStyles.medium}
                   IconHeight={IconsStyles.medium}
-                  IconColorStart={BackgroundColors.gradientColorStart}
-                  IconColorEnd={BackgroundColors.gradientColorEnd}
+                  IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                  IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
                 />
               </TouchableOpacity>
               <View style={{position: 'absolute', bottom: Sizes.size100}}>

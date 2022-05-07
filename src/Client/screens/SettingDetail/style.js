@@ -3,12 +3,10 @@ import {BackgroundColors, Sizes} from '../../../assets/RootStyle';
 
 const styles = theme => {
   return StyleSheet.create({
-    container:{
-
-    },
-    content:{
+    container: {},
+    content: {
       marginHorizontal: Sizes.size15,
-    }
+    },
   });
 };
 

@@ -1,12 +1,10 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {ArrowRightIcon} from '../../assets/images/Icons';
+import {ArrowRightIcon} from '../../assets/Icons';
 import {styles} from './styles';
-import NavigationService from '../../RootNavigation';
-import * as RootNavigation from '../../RootNavigation';
-import {Colors, Sizes} from '../../assets/RootStyle';
-import i18n from '../../assets/I18n';
-import {Languages} from '../../assets/images/Icons/Languages';
+import * as RootNavigation from '../../../RootNavigation';
+import {Colors, Sizes} from '../../../assets/RootStyle';
+import i18n from '../../../assets/I18n';
 
 const LinkItem = ({title, titleColor, navigate, linkState, query, onPress}) => {
   const {

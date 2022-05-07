@@ -2,20 +2,20 @@ import React, {Component} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import {ScreenHeader} from '../../components/ScreenHeader';
 import {LinkItem} from '../../components/LinkItem';
-import {styles} from './style';
-import {Sizes} from '../../../assets/RootStyle';
+import {connect} from 'react-redux';
+import {makeAction} from '../../../makeAction';
 class Activate extends Component {
   constructor(props) {
     super(props);
     this.state = {
       magnets: {
-        carMagnet: 'pages.activations.carMagnet',
-        areaMagnet: 'pages.activations.areaMagnet',
+        carMagnet: 'client.pages.activations.carMagnet',
+        areaMagnet: 'client.pages.activations.areaMagnet',
       },
     };
   }
   render() {
-    const {navigation} = this.props;
+    const {navigation, theme} = this.props;
     const {magnets} = this.state;
     const renderItem = ({item}) => {
       return (
@@ -28,7 +28,7 @@ class Activate extends Component {
     };
 
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: theme?.PRIMARY_BACKGROUND_COLOR}}>
         <ScreenHeader
           title="activations.title"
           leftIcon="back"
@@ -46,4 +46,11 @@ class Activate extends Component {
   }
 }
 
-export default Activate;
+const mapStateToProps = store => {
+  return {
+    theme: store.themes.theme,
+    buttonColor: store.themes.buttonColor,
+  };
+};
+
+export default connect(mapStateToProps, {makeAction})(Activate);

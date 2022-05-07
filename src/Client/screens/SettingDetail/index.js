@@ -8,7 +8,7 @@ class SettingDetail extends Component {
     super(props);
   }
   render() {
-    const {route,navigation } = this.props;
+    const {route, navigation} = this.props;
     const {container, content} = styles();
     const {pageInfo} = route.params;
 

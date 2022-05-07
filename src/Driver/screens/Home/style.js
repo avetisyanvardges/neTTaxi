@@ -5,30 +5,36 @@ const styles = theme => {
   return StyleSheet.create({
     container: {
       flex: 1,
+      marginHorizontal: Sizes.size15,
     },
     content: {
-      flex: 1,
+      flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
+      width: Sizes.size132,
+      height: Sizes.size44,
+      backgroundColor: 'white',
+      borderRadius: 7,
+      padding: 10,
     },
     menuIcon: {
       width: Sizes.size35,
       height: Sizes.size35,
       justifyContent: 'center',
       alignItems: 'center',
-      position: 'absolute',
-      top: Sizes.size20,
-      left: Sizes.size20,
       borderRadius: Sizes.size10,
     },
-    money: {
-      width: Sizes.size10,
-      height: Sizes.size20,
-      color: Colors.black,
+    text: {
+      fontFamily: 'BraindGyumri',
+      marginLeft: 42,
+    },
+    target: {
+      width: 44,
+      height: 44,
+      borderRadius: 22,
+      backgroundColor: 'white',
       justifyContent: 'center',
       alignItems: 'center',
-      top: Sizes.size20,
-      right: Sizes.size20,
     },
   });
 };

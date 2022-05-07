@@ -1,20 +1,11 @@
 import React, {useEffect} from 'react';
-import AppContainer from './src/Navigation';
 import {Provider} from 'react-redux';
 import store from './src/redux';
-import {NavigationContainer} from '@react-navigation/native';
-import {
-  setCustomText,
-  setCustomTextInput,
-  setCustomPicker,
-} from 'react-native-global-props';
-import {Sizes} from './src/assets/RootStyle';
-import {StatusBar} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
-import i18n from './src/assets/I18n';
-import {navigationRef} from './src/RootNavigation';
-import {deviceInfo} from './src/assets/DeviceInfo';
-import {View, Text} from 'react-native';
+import Main from './src/Main';
+import {View} from 'react-native';
+import {setCustomText, setCustomTextInput} from 'react-native-global-props';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import i18n from 'i18next';
 
 const App = () => {
   useEffect(() => {
@@ -26,49 +17,27 @@ const App = () => {
     const parse = JSON.parse(data);
     console.log(parse, 'parse');
     i18n.changeLanguage(parse);
-    if (parse === 'ru') {
-      const customTextInputProps = {
-        style: {
-          fontFamily: 'OswaldLight',
-        },
-      };
-      const customTextProps = {
-        style: {
-          fontFamily: 'OswaldLight',
-          fontSize: Sizes.size17,
-        },
-      };
 
-      setCustomText(customTextProps);
-      setCustomTextInput(customTextInputProps);
-    } else {
-      const customTextInputProps = {
-        style: {
-          fontFamily: 'BraindGyumri',
-        },
-      };
-      const customTextProps = {
-        style: {
-          fontFamily: 'BraindGyumri',
-          fontSize: deviceInfo.deviceHeight < 822 ? Sizes.size15 : Sizes.size17,
-        },
-      };
-      setCustomText(customTextProps);
-      setCustomTextInput(customTextInputProps);
-    }
+    const customTextInputProps = {
+      style: {
+        fontFamily: 'BraindGyumri',
+      },
+    };
+    const customTextProps = {
+      style: {
+        fontFamily: 'BraindGyumri',
+      },
+    };
+    setCustomText(customTextProps);
+    setCustomTextInput(customTextInputProps);
   };
 
   return (
-    <Provider store={store}>
-      <NavigationContainer ref={navigationRef}>
-        <StatusBar
-          translucent
-          backgroundColor="transparent"
-          barStyle="dark-content"
-        />
-        <AppContainer />
-      </NavigationContainer>
-    </Provider>
+    <View style={{flex: 1}}>
+      <Provider store={store}>
+        <Main />
+      </Provider>
+    </View>
   );
 };
 

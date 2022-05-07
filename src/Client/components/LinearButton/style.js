@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Colors, Shadow, Sizes} from '../../../assets/RootStyle';
+import {Colors, Sizes} from '../../../assets/RootStyle';
 import {deviceInfo} from '../../../assets/DeviceInfo';
 
 const styles = theme => {
@@ -25,13 +25,13 @@ const styles = theme => {
       padding: deviceInfo.deviceHeight < 822 ? Sizes.size8 : Sizes.size12,
     },
     smallFontSize: {
-      fontSize: Sizes.size25,
+      fontSize: Sizes.size20,
     },
     normalFontSize: {
-      fontSize: Sizes.size25,
+      fontSize: Sizes.size20,
     },
     bigFontSize: {
-      fontSize: Sizes.size25,
+      fontSize: Sizes.size20,
     },
   });
 };

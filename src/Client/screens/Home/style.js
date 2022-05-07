@@ -1,10 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {
-  BackgroundColors,
-  Colors,
-  Shadow,
-  Sizes,
-} from '../../../assets/RootStyle';
+import {Colors, Shadow, Sizes} from '../../../assets/RootStyle';
 import {deviceInfo} from '../../../assets/DeviceInfo';
 
 const styles = theme => {
@@ -65,7 +60,6 @@ const styles = theme => {
       justifyContent: 'center',
       width: Sizes.size45,
       height: Sizes.size45,
-      borderWidth: 1,
       borderRadius: 20,
     },
     menuIcon: {
@@ -81,7 +75,7 @@ const styles = theme => {
       width: Sizes.size40,
       height: Sizes.size40,
       borderRadius: Sizes.size22,
-      backgroundColor: BackgroundColors.white,
+      backgroundColor: '#F2F2F2',
       marginHorizontal: Sizes.size15,
       justifyContent: 'center',
       alignItems: 'center',
@@ -91,7 +85,7 @@ const styles = theme => {
       width: Sizes.size40,
       height: Sizes.size40,
       borderRadius: Sizes.size22,
-      backgroundColor: BackgroundColors.white,
+      backgroundColor: '#F2F2F2',
       justifyContent: 'center',
       alignItems: 'center',
       ...Shadow,
@@ -100,7 +94,7 @@ const styles = theme => {
       width: Sizes.size40,
       height: Sizes.size40,
       borderRadius: Sizes.size22,
-      backgroundColor: BackgroundColors.white,
+      backgroundColor: '#F2F2F2',
       marginHorizontal: Sizes.size15,
       justifyContent: 'center',
       alignItems: 'center',
@@ -116,7 +110,7 @@ const styles = theme => {
       top: Sizes.size82,
       paddingHorizontal: Sizes.size16,
       borderRadius: Sizes.size12,
-      backgroundColor: BackgroundColors.white,
+      backgroundColor: '#F2F2F2',
       ...Shadow,
     },
   });

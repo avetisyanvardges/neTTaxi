@@ -2,8 +2,6 @@ import {SET_USER_LOCATION} from '../../actionsTypes';
 import AsyncStorage from '@react-native-community/async-storage';
 import RNAndroidLocationEnabler from 'react-native-android-location-enabler';
 import Geolocation from 'react-native-geolocation-service';
-import * as Platform from 'react-native';
-import {put} from '@redux-saga/core/effects';
 
 function* getUserLocation(data) {
   try {

@@ -1,10 +1,7 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {ArrowRight} from '../../assets/Icons';
 import {styles} from './style';
-import NavigationService from '../../../RootNavigation';
-import * as RootNavigation from '../../../RootNavigation';
-import {Colors, Sizes} from '../../../assets/RootStyle';
+import {Sizes} from '../../../assets/RootStyle';
 import i18n from '../../../assets/I18n';
 import LinearGradient from 'react-native-linear-gradient';
 

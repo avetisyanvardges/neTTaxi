@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import {View, Text, Pressable} from 'react-native';
-import {styles} from './style';
 import {ScreenHeader} from '../../components/ScreenHeader';
-// import {Picker} from '@react-native-picker/picker';
-import {BackgroundColors, Sizes} from '../../../assets/RootStyle';
+import {Sizes} from '../../../assets/RootStyle';
 import LinearGradient from 'react-native-linear-gradient';
 import {deviceInfo} from '../../../assets/DeviceInfo';
 import i18n from 'i18next';
 import {Location} from '../../assets/Icons';
+import {connect} from 'react-redux';
+import {makeAction} from '../../../makeAction';
+import {Picker} from '@react-native-picker/picker';
 
 class Order extends Component {
   constructor(props) {
@@ -18,10 +19,10 @@ class Order extends Component {
     };
   }
   render() {
-    const {navigation} = this.props;
+    const {navigation, buttonColor, theme} = this.props;
     const {classes, passenger} = this.state;
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: theme?.PRIMARY_BACKGROUND_COLOR}}>
         <ScreenHeader
           title="orders.title"
           leftIcon="back"
@@ -30,10 +31,7 @@ class Order extends Component {
         <LinearGradient
           start={{x: 0, y: 0.5}}
           end={{x: 1.3, y: 0.5}}
-          colors={[
-            BackgroundColors.gradientColorStart,
-            BackgroundColors.gradientColorEnd,
-          ]}
+          colors={buttonColor?.PRIMARY_BUTTON_COLOR}
           style={{
             width: deviceInfo.deviceWidth - Sizes.size20,
             marginHorizontal: Sizes.size10,
@@ -46,49 +44,48 @@ class Order extends Component {
             style={{
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: '#F2F2F2',
+              backgroundColor: theme?.PRIMARY_BACKGROUND_COLOR,
               margin: Sizes.size2,
               borderRadius: Sizes.size8,
             }}>
-            {/*<Picker*/}
-            {/*  style={{*/}
-            {/*    width: deviceInfo.deviceWidth - Sizes.size25,*/}
-            {/*    paddingHorizontal: Sizes.size40,*/}
-            {/*  }}*/}
-            {/*  selectedValue={classes}*/}
-            {/*  onValueChange={(itemValue, itemIndex) => {*/}
-            {/*    this.setState({classes: itemValue});*/}
-            {/*  }}>*/}
-            {/*  <Picker.Item*/}
-            {/*    label={i18n.t('pages.activations.econom')}*/}
-            {/*    value="econom"*/}
-            {/*  />*/}
-            {/*  <Picker.Item*/}
-            {/*    label={i18n.t('pages.activations.comfort')}*/}
-            {/*    value="comfort"*/}
-            {/*  />*/}
-            {/*  <Picker.Item*/}
-            {/*    label={i18n.t('pages.activations.comfortPlus')}*/}
-            {/*    value="comfortPlus"*/}
-            {/*  />*/}
-            {/*  <Picker.Item*/}
-            {/*    label={i18n.t('pages.activations.buissnes')}*/}
-            {/*    value="buissnes"*/}
-            {/*  />*/}
-            {/*  <Picker.Item*/}
-            {/*    label={i18n.t('pages.activations.miniven')}*/}
-            {/*    value="miniven"*/}
-            {/*  />*/}
-            {/*</Picker>*/}
+            <Picker
+              style={{
+                width: deviceInfo.deviceWidth - Sizes.size25,
+                paddingHorizontal: Sizes.size40,
+                color: theme?.PRIMARY_TEXT_COLOR,
+              }}
+              selectedValue={classes}
+              onValueChange={(itemValue, itemIndex) => {
+                this.setState({classes: itemValue});
+              }}>
+              <Picker.Item
+                label={i18n.t('client.pages.activations.economy')}
+                value="economy"
+              />
+              {/* eslint-disable-next-line react/jsx-no-undef */}
+              <Picker.Item
+                label={i18n.t('client.pages.activations.comfort')}
+                value="comfort"
+              />
+              <Picker.Item
+                label={i18n.t('client.pages.activations.comfortPlus')}
+                value="comfortPlus"
+              />
+              <Picker.Item
+                label={i18n.t('client.pages.activations.business')}
+                value="business"
+              />
+              <Picker.Item
+                label={i18n.t('client.pages.activations.minivan')}
+                value="minivan"
+              />
+            </Picker>
           </View>
         </LinearGradient>
         <LinearGradient
           start={{x: 0, y: 0.5}}
           end={{x: 1.3, y: 0.5}}
-          colors={[
-            BackgroundColors.gradientColorStart,
-            BackgroundColors.gradientColorEnd,
-          ]}
+          colors={buttonColor?.PRIMARY_BUTTON_COLOR}
           style={{
             width: deviceInfo.deviceWidth - Sizes.size20,
             marginHorizontal: Sizes.size10,
@@ -102,12 +99,18 @@ class Order extends Component {
               width: deviceInfo.deviceWidth - Sizes.size24,
               flexDirection: 'row',
               alignItems: 'center',
-              backgroundColor: '#F2F2F2',
+              backgroundColor: theme?.PRIMARY_BACKGROUND_COLOR,
               margin: Sizes.size2,
               borderRadius: Sizes.size8,
             }}>
             <View style={{flex: 1, marginHorizontal: Sizes.size15}}>
-              <Text style={{fontSize: Sizes.size20}}>Սկզբնակետ</Text>
+              <Text
+                style={{
+                  fontSize: Sizes.size20,
+                  color: theme?.PRIMARY_TEXT_COLOR,
+                }}>
+                Սկզբնակետ
+              </Text>
             </View>
             <View
               style={{
@@ -119,8 +122,8 @@ class Order extends Component {
               <Location
                 IconWidth={Sizes.size35}
                 IconHeight={Sizes.size35}
-                IconColorStart={BackgroundColors.gradientColorStart}
-                IconColorEnd={BackgroundColors.gradientColorEnd}
+                IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
               />
             </View>
           </Pressable>
@@ -128,10 +131,7 @@ class Order extends Component {
         <LinearGradient
           start={{x: 0, y: 0.5}}
           end={{x: 1.3, y: 0.5}}
-          colors={[
-            BackgroundColors.gradientColorStart,
-            BackgroundColors.gradientColorEnd,
-          ]}
+          colors={buttonColor?.PRIMARY_BUTTON_COLOR}
           style={{
             width: deviceInfo.deviceWidth - Sizes.size20,
             marginHorizontal: Sizes.size10,
@@ -145,12 +145,18 @@ class Order extends Component {
               width: deviceInfo.deviceWidth - Sizes.size24,
               flexDirection: 'row',
               alignItems: 'center',
-              backgroundColor: '#F2F2F2',
+              backgroundColor: theme?.PRIMARY_BACKGROUND_COLOR,
               margin: Sizes.size2,
               borderRadius: Sizes.size8,
             }}>
             <View style={{flex: 1, marginHorizontal: Sizes.size15}}>
-              <Text style={{fontSize: Sizes.size20}}>Վերջնակետ</Text>
+              <Text
+                style={{
+                  fontSize: Sizes.size20,
+                  color: theme?.PRIMARY_TEXT_COLOR,
+                }}>
+                Վերջնակետ
+              </Text>
             </View>
             <View
               style={{
@@ -162,8 +168,8 @@ class Order extends Component {
               <Location
                 IconWidth={Sizes.size35}
                 IconHeight={Sizes.size35}
-                IconColorStart={BackgroundColors.gradientColorStart}
-                IconColorEnd={BackgroundColors.gradientColorEnd}
+                IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
               />
             </View>
           </Pressable>
@@ -171,10 +177,7 @@ class Order extends Component {
         <LinearGradient
           start={{x: 0, y: 0.5}}
           end={{x: 1.3, y: 0.5}}
-          colors={[
-            BackgroundColors.gradientColorStart,
-            BackgroundColors.gradientColorEnd,
-          ]}
+          colors={buttonColor?.PRIMARY_BUTTON_COLOR}
           style={{
             width: deviceInfo.deviceWidth - Sizes.size20,
             marginHorizontal: Sizes.size10,
@@ -187,29 +190,36 @@ class Order extends Component {
             style={{
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: '#F2F2F2',
+              backgroundColor: theme?.PRIMARY_BACKGROUND_COLOR,
               margin: Sizes.size2,
               borderRadius: Sizes.size8,
             }}>
-            {/*<Picker*/}
-            {/*  style={{*/}
-            {/*    width: deviceInfo.deviceWidth - Sizes.size25,*/}
-            {/*    paddingHorizontal: Sizes.size40,*/}
-            {/*  }}*/}
-            {/*  selectedValue={passenger}*/}
-            {/*  onValueChange={(itemValue, itemIndex) => {*/}
-            {/*    this.setState({passenger: itemValue});*/}
-            {/*  }}>*/}
-            {/*  <Picker.Item label="Ուղևորներ" value="#" />*/}
-            {/*  <Picker.Item label="1" value="one" />*/}
-            {/*  <Picker.Item label="2" value="two" />*/}
-            {/*  <Picker.Item label="3" value="three" />*/}
-            {/*</Picker>*/}
+            <Picker
+              style={{
+                width: deviceInfo.deviceWidth - Sizes.size25,
+                paddingHorizontal: Sizes.size40,
+                color: theme?.PRIMARY_TEXT_COLOR,
+              }}
+              selectedValue={passenger}
+              onValueChange={(itemValue, itemIndex) => {
+                this.setState({passenger: itemValue});
+              }}>
+              <Picker.Item label="Ուղևորներ" value="#" />
+              <Picker.Item label="1" value="one" />
+              <Picker.Item label="2" value="two" />
+              <Picker.Item label="3" value="three" />
+            </Picker>
           </View>
         </LinearGradient>
       </View>
     );
   }
 }
+const mapStateToProps = store => {
+  return {
+    theme: store.themes.theme,
+    buttonColor: store.themes.buttonColor,
+  };
+};
 
-export default Order;
+export default connect(mapStateToProps, {makeAction})(Order);

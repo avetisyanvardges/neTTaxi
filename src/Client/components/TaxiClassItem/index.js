@@ -8,14 +8,14 @@ import {
   SafeAreaView,
 } from 'react-native';
 import {styles} from './style';
-import png1 from "../../assets/images/economG.png";
-import png2 from "../../assets/images/konfortG.png";
-import png3 from "../../assets/images/buissnesG.png";
-import png4 from "../../assets/images/komboG.png";
-import png5 from "../../assets/images/economB.png"
-import png6 from "../../assets/images/konfortB.png"
-import png7 from "../../assets/images/buissnesB.png"
-import png8 from "../../assets/images/komboB.png"
+import png1 from '../../assets/images/economG.png';
+import png2 from '../../assets/images/konfortG.png';
+import png3 from '../../assets/images/businessG.png';
+import png4 from '../../assets/images/komboG.png';
+import png5 from '../../assets/images/economB.png';
+import png6 from '../../assets/images/konfortB.png';
+import png7 from '../../assets/images/businessB.png';
+import png8 from '../../assets/images/komboB.png';
 
 const TaxiClassItem = () => {
   const DATA = [
@@ -48,28 +48,21 @@ const TaxiClassItem = () => {
     },
   ];
   const [active, setActive] = useState(false);
-  const {
-    imageContainer,
-    totalPrice,
-    titleContainer,
-    bigContainer,
-    itemStyle
-  } = styles();
+  const {imageContainer, totalPrice, titleContainer, bigContainer, itemStyle} =
+    styles();
   const Item = ({item, onPress, backgroundColor, textColor}) => (
-      <TouchableOpacity
+    <TouchableOpacity onPress={onPress} style={[itemStyle, backgroundColor]}>
+      <Image
         onPress={onPress}
-        style={[itemStyle, backgroundColor]}>
-        <Image
-          onPress={onPress}
-          source={item.id === active ? item.imag : item.img}
-          alt={JSON.stringify(item.img)}
-          style={[imageContainer]}
-        />
-        <Text style={titleContainer}>{item.title}</Text>
-        <Text onPress={onPress} style={textColor}>
-          {item.price}
-        </Text>
-      </TouchableOpacity>
+        source={item.id === active ? item.imag : item.img}
+        alt={JSON.stringify(item.img)}
+        style={[imageContainer]}
+      />
+      <Text style={titleContainer}>{item.title}</Text>
+      <Text onPress={onPress} style={textColor}>
+        {item.price}
+      </Text>
+    </TouchableOpacity>
   );
   const renderItem = ({item}) => {
     const backgroundColor = item.id === active ? '#DCDCDC' : '#282727';

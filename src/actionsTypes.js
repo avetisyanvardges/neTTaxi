@@ -1,10 +1,10 @@
-export const MAN_THEME_LIGHT = 'MAN_THEME_LIGHT';
-export const WOMAN_THEME_LIGHT = 'WOMAN_THEME_LIGHT';
-export const MAN_THEME_DARK = 'MAN_THEME_DARK';
-export const WOMAN_THEME_DARK = 'WOMAN_THEME_DARK';
+export const LIGHT_THEME = 'LIGHT_THEME';
+export const DARK_THEME = 'DARK_THEME';
+export const WOMAN_BUTTON_COLOR = 'WOMAN_BUTTON_COLOR';
+export const MAN_BUTTON_COLOR = 'MAN_BUTTON_COLOR';
 export const SCALE_MENU = 'SCALE_MENU';
 
-//user
+//-------------------------USER--------------------
 export const SET_USER_LOCATION = 'SET_USER_LOCATION';
 export const GET_USER_LOCATION = 'GET_USER_LOCATION';
 export const UPDATE_USER_LOCATION = 'UPDATE_USER_LOCATION';

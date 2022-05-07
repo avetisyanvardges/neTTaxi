@@ -5,16 +5,18 @@ import {ScreenHeader} from '../../components/ScreenHeader';
 import {BackgroundColors, Sizes} from '../../../assets/RootStyle';
 import i18n from '../../../assets/I18n';
 import LinearGradient from 'react-native-linear-gradient';
+import {connect} from 'react-redux';
+import {makeAction} from '../../../makeAction';
 
 class Security extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    const {navigation} = this.props;
+    const {navigation, buttonColor, theme} = this.props;
     const {underLine} = styles();
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: theme?.PRIMARY_BACKGROUND_COLOR}}>
         <ScreenHeader
           title="security.title"
           leftIcon="back"
@@ -25,8 +27,9 @@ class Security extends Component {
             marginHorizontal: Sizes.size34,
             marginTop: Sizes.size35,
           }}>
-          <Text style={{fontSize: Sizes.size19}}>
-            {i18n.t('pages.security.based_safety')}
+          <Text
+            style={{fontSize: Sizes.size19, color: theme?.PRIMARY_TEXT_COLOR}}>
+            {i18n.t('client.pages.security.based_safety')}
           </Text>
         </View>
         <View style={underLine} />
@@ -41,10 +44,7 @@ class Security extends Component {
             <LinearGradient
               start={{x: 0, y: 0.5}}
               end={{x: 1.3, y: 0.5}}
-              colors={[
-                BackgroundColors.gradientColorStart,
-                BackgroundColors.gradientColorEnd,
-              ]}
+              colors={buttonColor?.PRIMARY_BUTTON_COLOR}
               style={{
                 width: Sizes.size8,
                 height: Sizes.size8,
@@ -52,7 +52,9 @@ class Security extends Component {
                 borderRadius: Sizes.size50,
               }}
             />
-            <Text>{i18n.t('pages.security.mask')}</Text>
+            <Text style={{color: theme?.PRIMARY_TEXT_COLOR}}>
+              {i18n.t('client.pages.security.mask')}
+            </Text>
           </View>
           <View
             style={{
@@ -64,10 +66,7 @@ class Security extends Component {
             <LinearGradient
               start={{x: 0, y: 0.5}}
               end={{x: 1.3, y: 0.5}}
-              colors={[
-                BackgroundColors.gradientColorStart,
-                BackgroundColors.gradientColorEnd,
-              ]}
+              colors={buttonColor?.PRIMARY_BUTTON_COLOR}
               style={{
                 width: Sizes.size8,
                 height: Sizes.size8,
@@ -75,7 +74,9 @@ class Security extends Component {
                 borderRadius: Sizes.size50,
               }}
             />
-            <Text>{i18n.t('pages.security.online_payments')}</Text>
+            <Text style={{color: theme?.PRIMARY_TEXT_COLOR}}>
+              {i18n.t('client.pages.security.online_payments')}
+            </Text>
           </View>
           <View
             style={{
@@ -87,10 +88,7 @@ class Security extends Component {
             <LinearGradient
               start={{x: 0, y: 0.5}}
               end={{x: 1.3, y: 0.5}}
-              colors={[
-                BackgroundColors.gradientColorStart,
-                BackgroundColors.gradientColorEnd,
-              ]}
+              colors={buttonColor?.PRIMARY_BUTTON_COLOR}
               style={{
                 width: Sizes.size8,
                 height: Sizes.size8,
@@ -98,7 +96,9 @@ class Security extends Component {
                 borderRadius: Sizes.size50,
               }}
             />
-            <Text>{i18n.t('pages.security.disinfect')}</Text>
+            <Text style={{color: theme?.PRIMARY_TEXT_COLOR}}>
+              {i18n.t('client.pages.security.disinfect')}
+            </Text>
           </View>
           <View
             style={{
@@ -110,10 +110,7 @@ class Security extends Component {
             <LinearGradient
               start={{x: 0, y: 0.5}}
               end={{x: 1.3, y: 0.5}}
-              colors={[
-                BackgroundColors.gradientColorStart,
-                BackgroundColors.gradientColorEnd,
-              ]}
+              colors={buttonColor?.PRIMARY_BUTTON_COLOR}
               style={{
                 width: Sizes.size8,
                 height: Sizes.size8,
@@ -121,7 +118,9 @@ class Security extends Component {
                 borderRadius: Sizes.size50,
               }}
             />
-            <Text>{i18n.t('pages.security.wash_hands')}</Text>
+            <Text style={{color: theme?.PRIMARY_TEXT_COLOR}}>
+              {i18n.t('client.pages.security.wash_hands')}
+            </Text>
           </View>
         </View>
       </View>
@@ -129,4 +128,11 @@ class Security extends Component {
   }
 }
 
-export default Security;
+const mapStateToProps = store => {
+  return {
+    theme: store.themes.theme,
+    buttonColor: store.themes.buttonColor,
+  };
+};
+
+export default connect(mapStateToProps, {makeAction})(Security);

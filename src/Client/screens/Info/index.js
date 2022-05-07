@@ -3,23 +3,19 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import {styles} from './style';
 import {ScreenHeader} from '../../components/ScreenHeader';
 import {BackgroundColors, Colors, Sizes} from '../../../assets/RootStyle';
-import {
-  About,
-  Address,
-  Language,
-  Payment,
-  Question,
-} from '../../assets/Icons';
+import {About, Address, Language, Payment, Question} from '../../assets/Icons';
 import i18n from '../../../assets/I18n';
 import TaxiPrice from '../../assets/Icons/TaxiPrice';
+import {connect} from 'react-redux';
+import {makeAction} from '../../../makeAction';
 class Info extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    const {navigation} = this.props;
+    const {navigation, buttonColor, theme} = this.props;
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: theme?.PRIMARY_BACKGROUND_COLOR}}>
         <ScreenHeader
           title="info.title"
           leftIcon="back"
@@ -40,11 +36,13 @@ class Info extends Component {
             <TaxiPrice
               IconWidth={Sizes.size22}
               IconHeight={Sizes.size22}
-              IconColorStart={BackgroundColors.gradientColorStart}
-              IconColorEnd={BackgroundColors.gradientColorEnd}
+              IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+              IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
             />
             <View style={{marginHorizontal: Sizes.size12}}>
-              <Text>{i18n.t('pages.info.tariffs')}</Text>
+              <Text style={{color: theme?.PRIMARY_TEXT_COLOR}}>
+                {i18n.t('client.pages.info.tariffs')}
+              </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
@@ -61,11 +59,13 @@ class Info extends Component {
             <About
               IconWidth={Sizes.size22}
               IconHeight={Sizes.size22}
-              IconColorStart={BackgroundColors.gradientColorStart}
-              IconColorEnd={BackgroundColors.gradientColorEnd}
+              IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+              IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
             />
             <View style={{marginHorizontal: Sizes.size12}}>
-              <Text>{i18n.t('pages.info.about_us')}</Text>
+              <Text style={{color: theme?.PRIMARY_TEXT_COLOR}}>
+                {i18n.t('client.pages.info.about_us')}
+              </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
@@ -81,11 +81,13 @@ class Info extends Component {
             <Question
               IconWidth={Sizes.size22}
               IconHeight={Sizes.size22}
-              IconColorStart={BackgroundColors.gradientColorStart}
-              IconColorEnd={BackgroundColors.gradientColorEnd}
+              IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+              IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
             />
             <View style={{marginHorizontal: Sizes.size12}}>
-              <Text>{i18n.t('pages.info.use_site')}</Text>
+              <Text style={{color: theme?.PRIMARY_TEXT_COLOR}}>
+                {i18n.t('client.pages.info.use_site')}
+              </Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -94,4 +96,11 @@ class Info extends Component {
   }
 }
 
-export default Info;
+const mapStateToProps = store => {
+  return {
+    theme: store.themes.theme,
+    buttonColor: store.themes.buttonColor,
+  };
+};
+
+export default connect(mapStateToProps, {makeAction})(Info);

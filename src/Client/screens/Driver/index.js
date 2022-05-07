@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import { styles } from './style';
-import { ScreenHeader } from '../../components/ScreenHeader';
+import React, {Component} from 'react';
+import {View, Text} from 'react-native';
+import {ScreenHeader} from '../../components/ScreenHeader';
 
 class Driver extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    const { navigation } = this.props;
+    const {navigation} = this.props;
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{flex: 1}}>
         <ScreenHeader
           title="driver.title"
           leftIcon="back"
           leftIconPress={() => navigation.goBack()}
         />
-        <Text>Driver pAge</Text>
+        <Text>Driver page</Text>
       </View>
     );
   }

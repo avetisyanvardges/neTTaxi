@@ -5,11 +5,11 @@
         "title": "Magnets",
         "carMagnet": "Car Magnet",
         "areaMagnet": "Area magnet",
-        "econom": "Econom",
+        "economy": "Economy",
         "comfort": "Comfort",
         "comfortPlus": "Comfort+",
-        "buissnes": "Buissnes",
-        "miniven": "Miniven",
+        "business": "Business",
+        "minivan": "Minivan",
         "shipment": "Shipment",
         "number_of_cars": "Number of cars",
         "vacantCars": "Free cars",
@@ -63,7 +63,7 @@
         "email": "E-mail Address",
         "birth": "Year of birth, month, day "
       },
-      "driver": {
+      "driverr": {
         "title": "Driver"
       }
     }
@@ -71,57 +71,106 @@
   "driver": {
     "pages": {
       "reinforcements": {
-        "title": "Reinforcements"
+        "title": "Reinforcements",
+        "tariff": {
+          "title": "Tariff",
+          "time": "Time"
+        },
+        "points": "Points",
+        "radius": "Radius"
       },
       "wallet": {
         "title": "Wallet"
       },
       "data": {
-        "title": "Data"
+        "title": "Data",
+        "car": {
+          "title": "Car",
+          "brand": "Brand",
+          "model": "Model",
+          "license": "License Plate",
+          "date": "Date",
+          "color": "Color",
+          "license_ph": "Driver's license photo",
+          "tech_pass_ph": "Technical passport photos",
+          "car_ph": "Car photos"
+        },
+        "driver": {
+          "title": "Driver",
+          "name_sur": "Name Surname",
+          "phone": "Phone Number/Email Address",
+          "passport": "Passport Series and Number"
+        },
+        "statistics": {
+          "title": "Statistics",
+          "name": "Name",
+          "rating": "Rating",
+          "activity": "Activity",
+          "day": "Day",
+          "week": "Week"
+        }
       },
       "settings": {
-        "title": "Settings"
+        "title": "Settings",
+        "language": "Language",
+        "help": {
+          "title": "Help",
+          "message": "Message",
+          "contact_us": "Contact us"
+        },
+        "payment": {
+          "title": "Payment option",
+          "cash": "Cash",
+          "non_cash": "Non-Cash"
+        }
       },
       "suggestions": {
-        "title": "Suggestions"
+        "title": "Suggestions",
+        "headerText": "Suggestions/Complaints"
       },
       "security": {
-        "title": "Security"
+        "title": "Security",
+        "based_safety": " Based on the safety rules, using your health, we urge registered users to follow the COVID-19 VIRUS PROTECTION rules when providing or using the service.",
+        "mask": "Wear a mask and  glove.",
+        "online_payments": "Make payments online",
+        "disinfect": "Regularly   disinfect  the car",
+        "wash_hands": "Wash your hands with detergent regularly"
       },
       "rating": {
-        "title": "Rating"
+        "title": "Rating",
+        "top": "TOP 10 Drivers"
       }
     }
   },
   "classes": {
-    "econom": {
-      "title": "Էկոնոմ",
-      "description": "մինիմալ/300դր,ներառյալ 3կմ",
-      "subDescription": " այնուհետ կմ/100դր,քաղաքից դուրս կմ/100դր"
+    "economy": {
+      "title": "Economy",
+      "description": "minimum/300dr, including 3km",
+      "subDescription": " then km/100dr, outside the city km/100dr"
     },
     "comfort": {
-      "title": "Կոմֆորտ",
-      "description": "մինիմալ/400դր,ներառյալ 3կմ",
-      "subDescription": "այնուհետ կմ/100դր,քաղաքից դուրս կմ/120դր"
+      "title": "Comfort",
+      "description": "minimum/400dr, including 3km",
+      "subDescription": "then km/100dr, outside the city km/120dr"
     },
     "comfortPlus": {
-      "title": "Կոմֆորտ+",
-      "description": " մինիմալ/500դր,ներառյալ 3կմ",
-      "subDescription": "կմ/100դր,քաղաքից դուրս կմ/150դր"
+      "title": "Comfort+",
+      "description": " minimum/500dr, including 3km",
+      "subDescription": "then km/100dr, outside the city km/150dr"
     },
-    "buissnes": {
-      "title": "Բիզնես",
-      "description": "մինիմալ/800դր,ներառյալ 3կմ",
-      "subDescription": "այնուհետ կմ/80դր,քաղաքից դուրս կմ/150դր"
+    "business": {
+      "title": "Business",
+      "description": "minimum/800dr, including 3km",
+      "subDescription": "then km/80dr, outside the city km/150dr"
     },
-    "miniven": {
-      "title": "Մինիվեն",
-      "description": "մինիմալ/600դր,ներառյալ 3կմ",
-      "subDescription": "այնուհետ կմ/100դր,միայն քաղաքի ներսում"
+    "minivan": {
+      "title": "Minivan",
+      "description": "minimum/600dr, including 3km",
+      "subDescription": "then km/100dr, only inside the city"
     },
     "shipment": {
-      "title": "Առաքում",
-      "description": "300դր",
+      "title": "Delivery",
+      "description": "300dr",
       "subDescription": ""
     }
   },

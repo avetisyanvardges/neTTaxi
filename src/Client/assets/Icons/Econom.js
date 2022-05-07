@@ -1,7 +1,7 @@
 import React from 'react';
 import {Svg, Path, Circle} from 'react-native-svg';
 
-const Econom = ({IconWidth, IconHeight, IconColor}) => {
+const Economy = ({IconWidth, IconHeight, IconColor}) => {
   return (
     <Svg
       width={IconWidth}
@@ -25,4 +25,4 @@ const Econom = ({IconWidth, IconHeight, IconColor}) => {
     </Svg>
   );
 };
-export {Econom};
+export {Economy};

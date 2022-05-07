@@ -1,18 +1,16 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import {
-  TextInput,
   TouchableOpacity,
   View,
   Platform,
   PermissionsAndroid,
 } from 'react-native';
 import MapView from 'react-native-maps';
-import {mapstyle} from '../../../assets/utils/mapTheme';
-import {ChooseLocation, UserStart} from '../../assets/Icons';
+import {ChooseLocation} from '../../assets/Icons';
 import {makeAction} from '../../../makeAction';
 import {styles} from './style';
-import {BackgroundColors, Sizes} from '../../../assets/RootStyle';
-import {GET_USER_LOCATION, UPDATE_USER_LOCATION} from '../../../actionsTypes';
+import {Sizes} from '../../../assets/RootStyle';
+import {GET_USER_LOCATION} from '../../../actionsTypes';
 import {connect} from 'react-redux';
 import Geolocation from 'react-native-geolocation-service';
 import Geocoder from 'react-native-geocoding';
@@ -119,7 +117,7 @@ class Map extends Component {
   };
   render() {
     const {userLocationButton, container, mapStyle} = styles();
-
+    const {buttonColor, theme} = this.props;
     const mapHeader = () => {
       return (
         <>
@@ -129,8 +127,8 @@ class Map extends Component {
             <ChooseLocation
               IconWidth={Sizes.size18}
               IconHeight={Sizes.size18}
-              IconColorStart={BackgroundColors.gradientColorStart}
-              IconColorEnd={BackgroundColors.gradientColorEnd}
+              IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+              IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
             />
           </TouchableOpacity>
         </>
@@ -144,13 +142,13 @@ class Map extends Component {
           style={mapStyle}
           provider="google"
           showsUserLocation={true}
-          showsCompass={false}
+          showsMyLocationButton={false}
           loadingEnabled={true}
           initialRegion={this.state.region}
           maxZoomLevel={19}
           minZoomLevel={3}
           onRegionChange={region => this.onRegionChange(region)}
-          customMapStyle={mapstyle}
+          customMapStyle={theme?.PRIMARY_MAP_STYLE}
         />
         {mapHeader()}
       </View>
@@ -160,6 +158,8 @@ class Map extends Component {
 const mapStateToProps = store => {
   return {
     userLocation: store.profileData.location,
+    buttonColor: store.themes.buttonColor,
+    theme: store.themes.theme,
   };
 };
 

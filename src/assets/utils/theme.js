@@ -1,16 +1,23 @@
-export const manThemeDark = {
-  PRIMARY_BACKGROUND_COLOR: ['#526db9', '#30356c', '#30356c', '#222045'],
-  PRIMARY_TEXT_COLOR: ['#dee1ea', '#d8dae6', '#cdd2e3'],
+import {darkMapStyle, mapstyle} from './mapTheme';
+
+export const DarkTheme = {
+  PRIMARY_BACKGROUND_COLOR: '#333333',
+  PRIMARY_TEXT_COLOR: '#ffffff',
+  PRIMARY_BORDER_COLOR: '#31B4D1',
+  PRIMARY_HEADER_COLOR: '#384d49',
+  PRIMARY_MAP_STYLE: darkMapStyle,
 };
-export const manThemeLight = {
-  PRIMARY_BACKGROUND_COLOR: ['#dee1ea', '#d8dae6', '#cdd2e3'],
-  PRIMARY_TEXT_COLOR: ['#526db9', '#30356c', '#30356c', '#222045'],
+
+export const LightTheme = {
+  PRIMARY_BACKGROUND_COLOR: '#ffffff',
+  PRIMARY_TEXT_COLOR: '#000000',
+  PRIMARY_BORDER_COLOR: '#39419A',
+  PRIMARY_HEADER_COLOR: '#D5CAEA',
+  PRIMARY_MAP_STYLE: mapstyle,
 };
-export const womanThemeDark = {
-  PRIMARY_BACKGROUND_COLOR: ['#F4F0FA', '#E39EDC', '#BA68C8'],
-  PRIMARY_TEXT_COLOR: ['#F4F0FA', '#D3C7E9'],
+export const womanButton = {
+  PRIMARY_BUTTON_COLOR: ['#3C449F', '#AF41C1'],
 };
-export const womanThemeLight = {
-  PRIMARY_BACKGROUND_COLOR: ['#F4F0FA', '#D3C7E9'],
-  PRIMARY_TEXT_COLOR: ['#F4F0FA', '#E39EDC', '#BA68C8'],
+export const manButton = {
+  PRIMARY_BUTTON_COLOR: ['#31B4D1', '#1B75A8'],
 };

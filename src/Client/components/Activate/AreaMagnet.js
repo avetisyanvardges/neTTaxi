@@ -48,7 +48,13 @@ const AreaMagnet = () => {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Text>{i18n.t('pages.activations.diameter')}</Text>
+            <Text
+              style={{
+                fontSize: Sizes.size16,
+                fontFamily: 'BraindGyumri',
+              }}>
+              {i18n.t('client.pages.activations.diameter')}
+            </Text>
             <LinearGradient
               start={{x: 0, y: 0.5}}
               end={{x: 1.3, y: 0.5}}
@@ -97,7 +103,13 @@ const AreaMagnet = () => {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Text>{i18n.t('pages.activations.time')}</Text>
+            <Text
+              style={{
+                fontSize: Sizes.size16,
+                fontFamily: 'BraindGyumri',
+              }}>
+              {i18n.t('client.pages.activations.time')}
+            </Text>
             <LinearGradient
               start={{x: 0, y: 0.5}}
               end={{x: 1.3, y: 0.5}}
@@ -166,19 +178,25 @@ const AreaMagnet = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
-              <Text style={{fontSize: Sizes.size30}}>{price} բալ</Text>
+              <Text
+                style={{
+                  fontSize: Sizes.size30,
+                  fontFamily: 'BraindGyumri',
+                }}>
+                {price} բալ
+              </Text>
             </View>
           </LinearGradient>
         </View>
       </View>
       <View style={{marginTop: Sizes.size80, marginHorizontal: Sizes.size25}}>
-        <LinearButton
-          startColor={BackgroundColors.gradientColorStart}
-          endColor={BackgroundColors.gradientColorEnd}
-          title={i18n.t('texts.activate')}
-          size={'big'}
-          onPress={() => {}}
-        />
+        {/*<LinearButton*/}
+        {/*  startColor={BackgroundColors.gradientColorStart}*/}
+        {/*  endColor={BackgroundColors.gradientColorEnd}*/}
+        {/*  title={i18n.t('texts.activate')}*/}
+        {/*  size={'big'}*/}
+        {/*  onPress={() => {}}*/}
+        {/*/>*/}
       </View>
     </View>
   );

@@ -6,23 +6,26 @@ import {
   TouchableWithoutFeedback,
   Image,
   TextInput,
+  Pressable,
 } from 'react-native';
-import i18n from '../../../assets/I18n';
-import {BackgroundColors, Colors, Sizes} from '../../../assets/RootStyle';
+import {Colors, Sizes} from '../../../assets/RootStyle';
 import LinearGradient from 'react-native-linear-gradient';
 import LoginAnim from '../../assets/images/Login.png';
-import {LinearButton} from '../../components/LinearButton';
 import {ArrowLeft} from '../../assets/Icons';
+import {LinearButton} from '../../components/LinearButton';
+import {useSelector} from 'react-redux';
+import i18n from '../../../assets/I18n';
 
 const Verification = ({navigation}) => {
   const secondInput = useRef();
   const thirdInput = useRef();
   const fourthInput = useRef();
+  const buttonColor = useSelector(store => store.themes.buttonColor);
   const [countryCode, setCountryCode] = useState('+374');
   const [phone, setPhone] = useState('');
   const [next, setNext] = useState(false);
   const [verifyCode, setVerifyCode] = useState({
-    firtsNum: '',
+    firstNum: '',
     secondNum: '',
     thirdNum: '',
     fourthNum: '',
@@ -35,7 +38,7 @@ const Verification = ({navigation}) => {
 
     if (button === 'verify') {
       return (
-        !verifyCode.firtsNum ||
+        !verifyCode.firstNum ||
         !verifyCode.secondNum ||
         !verifyCode.thirdNum ||
         !verifyCode.fourthNum
@@ -44,7 +47,7 @@ const Verification = ({navigation}) => {
   };
 
   const verificationCode = () => {
-    const veriCode = `${verifyCode.firtsNum}${verifyCode.secondNum}${verifyCode.thirdNum}${verifyCode.fourthNum}`;
+    const veriCode = `${verifyCode.firstNum}${verifyCode.secondNum}${verifyCode.thirdNum}${verifyCode.fourthNum}`;
     if (phone === '77314814' && veriCode === '1234') {
       navigation.navigate('Client');
     } else if (phone === '44750756' && veriCode === '1234') {
@@ -60,10 +63,12 @@ const Verification = ({navigation}) => {
           end={{x: 1.3, y: 0.5}}
           colors={['#F4F0FA', '#D3C7E9']}
           style={{
-            height: '100%',
+            height: '107%',
+            borderRadius: Sizes.size50,
           }}>
           {next ? (
-            <View
+            <Pressable
+              onPress={() => setNext(false)}
               style={{
                 width: Sizes.size50,
                 height: Sizes.size50,
@@ -73,10 +78,10 @@ const Verification = ({navigation}) => {
               <ArrowLeft
                 IconWidth={Sizes.size25}
                 IconHeight={Sizes.size25}
-                IconColorStart={BackgroundColors.gradientColorStart}
-                IconColorEnd={BackgroundColors.gradientColorEnd}
+                IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
               />
-            </View>
+            </Pressable>
           ) : null}
           {!next ? (
             <View
@@ -117,8 +122,8 @@ const Verification = ({navigation}) => {
               </View>
               <View style={{marginTop: Sizes.size75}}>
                 <LinearButton
-                  startColor={BackgroundColors.gradientColorStart}
-                  endColor={BackgroundColors.gradientColorEnd}
+                  startColor={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                  endColor={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
                   title={i18n.t('texts.next')}
                   disabled={disabledButton('number')}
                   size={'big'}
@@ -139,18 +144,18 @@ const Verification = ({navigation}) => {
                 }}>
                 <TextInput
                   maxLength={1}
-                  value={verifyCode.firtsNum}
+                  value={verifyCode.firstNum}
                   onChangeText={code => {
-                    setVerifyCode({...verifyCode, firtsNum: code});
-                    !verifyCode.firtsNum ? secondInput.current.focus() : null;
+                    setVerifyCode({...verifyCode, firstNum: code});
+                    !verifyCode.firstNum ? secondInput.current.focus() : null;
                   }}
                   keyboardType={'numeric'}
                   style={{
                     fontSize: Sizes.size30,
                     alignItems: 'center',
                     justifyContent: 'center',
-                    borderBottomWidth: 2,
-                    borderBottomColor: Colors.gray,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Colors.borderDefColor,
                     marginRight: Sizes.size25,
                   }}
                 />
@@ -167,8 +172,8 @@ const Verification = ({navigation}) => {
                     fontSize: Sizes.size30,
                     alignItems: 'center',
                     justifyContent: 'center',
-                    borderBottomWidth: 2,
-                    borderBottomColor: Colors.gray,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Colors.borderDefColor,
                     marginRight: Sizes.size25,
                   }}
                 />
@@ -185,8 +190,8 @@ const Verification = ({navigation}) => {
                     fontSize: Sizes.size30,
                     alignItems: 'center',
                     justifyContent: 'center',
-                    borderBottomWidth: 2,
-                    borderBottomColor: Colors.gray,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Colors.borderDefColor,
                     marginRight: Sizes.size25,
                   }}
                 />
@@ -202,8 +207,8 @@ const Verification = ({navigation}) => {
                     fontSize: Sizes.size30,
                     alignItems: 'center',
                     justifyContent: 'center',
-                    borderBottomWidth: 2,
-                    borderBottomColor: Colors.gray,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Colors.borderDefColor,
                     marginRight: Sizes.size25,
                   }}
                 />
@@ -213,8 +218,8 @@ const Verification = ({navigation}) => {
               </Text>
               <View style={{marginTop: Sizes.size75}}>
                 <LinearButton
-                  startColor={BackgroundColors.gradientColorStart}
-                  endColor={BackgroundColors.gradientColorEnd}
+                  startColor={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+                  endColor={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
                   title={i18n.t('texts.login')}
                   disabled={disabledButton('verify')}
                   size={'big'}

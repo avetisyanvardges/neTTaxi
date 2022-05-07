@@ -15,6 +15,7 @@ const styles = theme => {
     text: {
       fontSize: Sizes.size18,
       marginLeft: Sizes.size16,
+      color: '#fff',
     },
   });
 };

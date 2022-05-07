@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {styles} from './style';
 import {ScreenHeader} from '../../components/ScreenHeader';
-import {BackgroundColors, Colors, Sizes} from '../../../assets/RootStyle';
+import {Colors, Sizes} from '../../../assets/RootStyle';
 import {
   Address,
   BigBen,
@@ -16,8 +16,10 @@ import i18n from '../../../assets/I18n';
 import Modal from 'react-native-modal';
 import {deviceInfo} from '../../../assets/DeviceInfo';
 import {RadioItem} from '../../components/RadioItem';
-import AsyncStorage from '@react-native-community/async-storage';
 import {setCustomText, setCustomTextInput} from 'react-native-global-props';
+import {connect} from 'react-redux';
+import {makeAction} from '../../../makeAction';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 class Settings extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +29,7 @@ class Settings extends Component {
     };
   }
   render() {
-    const {navigation} = this.props;
+    const {navigation, buttonColor, theme} = this.props;
     const {isModalVizible, isPaymentModalVizible} = this.state;
     const {content} = styles();
     const toggleModal = () => {
@@ -77,7 +79,7 @@ class Settings extends Component {
     };
 
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: theme?.PRIMARY_BACKGROUND_COLOR}}>
         <ScreenHeader
           title="settings.title"
           leftIcon="back"
@@ -98,11 +100,13 @@ class Settings extends Component {
             <Registration
               IconWidth={Sizes.size22}
               IconHeight={Sizes.size22}
-              IconColorStart={BackgroundColors.gradientColorStart}
-              IconColorEnd={BackgroundColors.gradientColorEnd}
+              IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+              IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
             />
             <View style={{marginHorizontal: Sizes.size12}}>
-              <Text>{i18n.t('pages.registration.title')}</Text>
+              <Text style={{color: theme?.PRIMARY_TEXT_COLOR}}>
+                {i18n.t('client.pages.registration.title')}
+              </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
@@ -119,11 +123,13 @@ class Settings extends Component {
             <Language
               IconWidth={Sizes.size22}
               IconHeight={Sizes.size22}
-              IconColorStart={BackgroundColors.gradientColorStart}
-              IconColorEnd={BackgroundColors.gradientColorEnd}
+              IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+              IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
             />
             <View style={{marginHorizontal: Sizes.size12}}>
-              <Text>{i18n.t('pages.settings.language')}</Text>
+              <Text style={{color: theme?.PRIMARY_TEXT_COLOR}}>
+                {i18n.t('client.pages.settings.language')}
+              </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
@@ -140,11 +146,13 @@ class Settings extends Component {
             <Address
               IconWidth={Sizes.size22}
               IconHeight={Sizes.size22}
-              IconColorStart={BackgroundColors.gradientColorStart}
-              IconColorEnd={BackgroundColors.gradientColorEnd}
+              IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+              IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
             />
             <View style={{marginHorizontal: Sizes.size12}}>
-              <Text>{i18n.t('pages.settings.usedAddresses')}</Text>
+              <Text style={{color: theme?.PRIMARY_TEXT_COLOR}}>
+                {i18n.t('client.pages.settings.usedAddresses')}
+              </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
@@ -161,11 +169,13 @@ class Settings extends Component {
             <Payment
               IconWidth={Sizes.size22}
               IconHeight={Sizes.size22}
-              IconColorStart={BackgroundColors.gradientColorStart}
-              IconColorEnd={BackgroundColors.gradientColorEnd}
+              IconColorStart={buttonColor?.PRIMARY_BUTTON_COLOR[0]}
+              IconColorEnd={buttonColor?.PRIMARY_BUTTON_COLOR[1]}
             />
             <View style={{marginHorizontal: Sizes.size12}}>
-              <Text>{i18n.t('pages.settings.payment')}</Text>
+              <Text style={{color: theme?.PRIMARY_TEXT_COLOR}}>
+                {i18n.t('client.pages.settings.payment')}
+              </Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -183,7 +193,7 @@ class Settings extends Component {
               width: Sizes.size230,
               height: Sizes.size220,
               borderRadius: Sizes.size20,
-              backgroundColor: BackgroundColors.white,
+              backgroundColor: theme?.PRIMARY_BACKGROUND_COLOR,
               justifyContent: 'center',
               alignItems: 'center',
             }}>
@@ -248,7 +258,7 @@ class Settings extends Component {
               width: Sizes.size230,
               height: Sizes.size220,
               borderRadius: Sizes.size20,
-              backgroundColor: BackgroundColors.white,
+              backgroundColor: theme?.PRIMARY_BACKGROUND_COLOR,
               justifyContent: 'center',
               alignItems: 'center',
             }}>
@@ -268,5 +278,11 @@ class Settings extends Component {
     );
   }
 }
+const mapStateToProps = store => {
+  return {
+    theme: store.themes.theme,
+    buttonColor: store.themes.buttonColor,
+  };
+};
 
-export default Settings;
+export default connect(mapStateToProps, {makeAction})(Settings);

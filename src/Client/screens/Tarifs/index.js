@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, FlatList} from 'react-native';
-import {styles} from './style';
+import {View, Text, FlatList} from 'react-native';
 import {ScreenHeader} from '../../components/ScreenHeader';
 import i18n from '../../../assets/I18n';
-import {BackgroundColors, Colors, Sizes} from '../../../assets/RootStyle';
-import TaxiPrice from '../../assets/Icons/TaxiPrice';
+import {Colors, Sizes} from '../../../assets/RootStyle';
+import {connect} from 'react-redux';
+import {makeAction} from '../../../makeAction';
 
 class Tariffs extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Tariffs extends Component {
     this.state = {
       classes: [
         {
-          title: 'econom',
+          title: 'economy',
           description: 'description',
           subDescription: 'subDescription',
         },
@@ -27,12 +27,12 @@ class Tariffs extends Component {
           subDescription: 'subDescription',
         },
         {
-          title: 'buissnes',
+          title: 'business',
           description: 'description',
           subDescription: 'subDescription',
         },
         {
-          title: 'miniven',
+          title: 'minivan',
           description: 'description',
           subDescription: 'subDescription',
         },
@@ -47,15 +47,15 @@ class Tariffs extends Component {
 
   render() {
     const {classes} = this.state;
-    const {navigation} = this.props;
+    const {navigation, theme, buttonColor} = this.props;
     const renderItem = ({item}) => {
       console.log(item);
       return (
         <View
           style={{
-            paddingHorizontal: Sizes.size5,
-            paddingVertical: Sizes.size15,
-            marginHorizontal: Sizes.size29,
+            paddingHorizontal: Sizes.size2,
+            paddingLeft: 42,
+            marginHorizontal: Sizes.size15,
             flexDirection: 'row',
             alignItems: 'center',
             borderBottomColor: Colors.borderDefColor,
@@ -65,13 +65,17 @@ class Tariffs extends Component {
             <View style={{flexDirection: 'row', marginVertical: Sizes.size5}}>
               <Text
                 style={{
-                  fontSize: Sizes.size20,
-                  color: 'blue',
+                  fontSize: Sizes.size18_5,
+                  color: buttonColor?.PRIMARY_BUTTON_COLOR[1],
                   marginRight: Sizes.size10,
                 }}>
                 {i18n.t(`classes.${item.title}.title`)}
               </Text>
-              <Text style={{fontSize: Sizes.size20, color: 'black'}}>
+              <Text
+                style={{
+                  fontSize: Sizes.size18_5,
+                  color: theme?.PRIMARY_TEXT_COLOR,
+                }}>
                 {i18n.t(`classes.${item.title}.description`)}
               </Text>
             </View>
@@ -87,7 +91,7 @@ class Tariffs extends Component {
     };
 
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: theme?.PRIMARY_BACKGROUND_COLOR}}>
         <ScreenHeader
           title="info.tariffs"
           leftIcon="back"
@@ -104,4 +108,11 @@ class Tariffs extends Component {
   }
 }
 
-export default Tariffs;
+const mapStateToProps = store => {
+  return {
+    theme: store.themes.theme,
+    buttonColor: store.themes.buttonColor,
+  };
+};
+
+export default connect(mapStateToProps, {makeAction})(Tariffs);

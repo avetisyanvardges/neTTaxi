@@ -1,40 +1,43 @@
 import {
-  manThemeDark,
-  manThemeLight,
-  womanThemeDark,
-  womanThemeLight,
+  DarkTheme,
+  LightTheme,
+  womanButton,
+  manButton,
 } from '../../assets/utils/theme';
 import {
-  MAN_THEME_LIGHT,
-  WOMAN_THEME_LIGHT,
-  MAN_THEME_DARK,
-  WOMAN_THEME_DARK,
+  DARK_THEME,
+  LIGHT_THEME,
+  MAN_BUTTON_COLOR,
+  WOMAN_BUTTON_COLOR,
 } from '../../actionsTypes';
 
 const initialState = {
-  theme: {...manThemeLight},
+  theme: {...LightTheme},
+  buttonColor: {...womanButton},
 };
 export default (state = initialState, action) => {
   switch (action.type) {
-    case MAN_THEME_LIGHT:
+    case DARK_THEME:
       return {
         ...state,
-        theme: {...manThemeLight},
+        theme: {...DarkTheme},
+        buttonColor: {...manButton},
       };
-    case WOMAN_THEME_LIGHT:
+    case LIGHT_THEME:
       return {
         ...state,
-        theme: {...womanThemeLight},
+        theme: {...LightTheme},
+        buttonColor: {...womanButton},
       };
-    case MAN_THEME_DARK:
+    case WOMAN_BUTTON_COLOR:
       return {
         ...state,
-        theme: {...manThemeDark},
+        buttonColor: {...womanButton},
       };
-    case WOMAN_THEME_DARK:
+    case MAN_BUTTON_COLOR:
       return {
         ...state,
-        theme: {...womanThemeDark},
+        buttonColor: {...manButton},
       };
     default:
       return state;

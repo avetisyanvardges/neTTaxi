@@ -39,6 +39,8 @@ export const Colors = {
   charGreen: '#2C2C2C',
   easternBlue: '#1794A5',
   botticelli: '#D0DFE6',
+  borderCol: '#C0ACE1',
+  textCol: '#3C449F',
   borderDefColor: 'rgba(218, 201, 245,0.4)',
 };
 
